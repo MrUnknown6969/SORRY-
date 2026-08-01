@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Girlfriend's Day, Meri Pyari Bandariya ❤️</title>
+    <style>
+        :root {
+            --primary-pink: #ff4b6e;
+            --deep-red: #d90429;
+            --soft-bg: #fff0f3;
+            --card-bg: #ffffff;
+            --text-color: #2b2b2b;
+            --accent-pink: #ff8fa3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--soft-bg);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .stage {
+            display: none;
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(255, 75, 110, 0.15);
+            animation: fadeIn 0.8s ease-in-out forwards;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .stage.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Stage 1: Gift Box */
+        .gift-box {
+            font-size: 90px;
+            cursor: pointer;
+            animation: bounce 2s infinite;
+            margin: 30px 0;
+            user-select: none;
+            display: inline-block;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+
+        .instruction {
+            font-size: 1.1rem;
+            color: var(--primary-pink);
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        /* General Content styling */
+        h1 {
+            color: var(--deep-red);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .highlight-box {
+            background: var(--soft-bg);
+            border-left: 4px solid var(--primary-pink);
+            padding: 15px;
+            border-radius: 0 10px 10px 0;
+            text-align: left;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        /* Photo Gallery Grid */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .photo-card {
+            background: #fff;
+            padding: 8px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .photo-card.featured {
+            grid-column: span 2;
+        }
+
+        .photo-card.featured img {
+            height: 200px;
+        }
+
+        /* Stage 6: Stick Figure Animation */
+        .stick-figure-container {
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+        }
+
+        .stickman {
+            position: relative;
+            width: 50px;
+            height: 100px;
+        }
+
+        .stickman.animating {
+            animation: squatMotion 1s linear infinite;
+        }
+
+        @keyframes squatMotion {
+            0%, 100% { top: 0; }
+            50% { top: 40px; }
+        }
+
+        .head {
+            width: 30px;
+            height: 30px;
+            border: 4px solid var(--deep-red);
+            border-radius: 50%;
+            position: absolute;
+            left: 10px;
+            background: white;
+        }
+
+        .body {
+            width: 4px;
+            height: 50px;
+            background: var(--deep-red);
+            position: absolute;
+            left: 23px;
+            top: 34px;
+        }
+
+        .arms {
+            width: 70px;
+            height: 4px;
+            background: var(--deep-red);
+            position: absolute;
+            left: -10px;
+            top: 55px;
+            transform: rotate(-45deg);
+        }
+        
+        .arms::after {
+            content: '';
+            width: 4px;
+            height: 30px;
+            background: var(--deep-red);
+            position: absolute;
+            right: 0;
+            top: -15px;
+        }
+        
+        .arms::before {
+            content: '';
+            width: 4px;
+            height: 30px;
+            background: var(--deep-red);
+            position: absolute;
+            left: 0;
+            top: -15px;
+        }
+
+        .legs {
+            width: 4px;
+            height: 40px;
+            background: var(--deep-red);
+            position: absolute;
+            left: 23px;
+            top: 80px;
+        }
+        
+        .legs::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 4px;
+            background: var(--deep-red);
+            left: -8px;
+            bottom: 0;
+        }
+
+        .sorry-counter {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--deep-red);
+            margin-top: 10px;
+        }
+
+        /* Stage 7: Typewriter Notebook */
+        .notebook {
+            background-color: #fff9e6;
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            text-align: left;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+            height: 250px;
+            overflow-y: auto;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .notebook::before {
+            content: '';
+            position: absolute;
+            left: 40px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: rgba(255, 0, 0, 0.2);
+        }
+
+        #typewriterText {
+            white-space: pre-wrap;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            background-color: var(--deep-red);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Buttons */
+        .btn {
+            background: linear-gradient(135deg, var(--primary-pink), var(--deep-red));
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 75, 110, 0.4);
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 75, 110, 0.6);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-pink);
+            border: 2px solid var(--primary-pink);
+            box-shadow: none;
+        }
+
+        .btn-secondary:hover {
+            background: var(--soft-bg);
+        }
+
+        /* Floating Hearts Animation */
+        .heart-float {
+            position: absolute;
+            color: var(--accent-pink);
+            font-size: 20px;
+            animation: flyUp 4s linear infinite;
+            opacity: 0.6;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        @keyframes flyUp {
+            0% { transform: translateY(0) scale(1); opacity: 0.8; }
+            100% { transform: translateY(-400px) scale(1.5); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- STAGE 1: The Gift Box Opening -->
+        <div id="stage1" class="stage active">
+            <h1>Meri Bacchu... ❤️</h1>
+            <p>I know aaj aap mere karan firse hurt hui ho. I'm truly sorry for everything i did today. I made a little gift to let you know you are my prari bandariya.</p>
+            <div class="gift-box" onclick="nextStage(2)">🎁</div>
+            <div class="instruction">Open the gift box!</div>
+        </div>
+
+        <!-- STAGE 2: The Heartfelt Apology -->
+        <div id="stage2" class="stage">
+            <h1>I'm Sorry, Meri Bacchi ✨</h1>
+            <div class="highlight-box">
+                <p><strong>Bacchu,</strong> I hate meself that you are crying because of me. My stress made me act like this, and mai dry wish nhi krna chahta tha i just wanted ki jaldi wish krdu and maine sachme us time nhi socha tha ki bad me rukkr acche se wish kr sakta hu mai jaldi wish krna chahta tha bas. You are my world, and you deserve all love of the workld. Please forgive me for being like this and saying vo pani me dubakr jo bola. I was not thinking clearly... sorryy</p>
+            </div>
+            <button class="btn" onclick="nextStage(3)">Make it up to you &rarr;</button>
+        </div>
+
+        <!-- STAGE 3: Why You Are Best -->
+        <div id="stage3" class="stage">
+            <h1>Why You're My Everything 💖</h1>
+            <p>Tap to know why I you are my world:</p>
+            <div class="highlight-box" id="complimentText" style="text-align: center; min-height: 60px;">
+                Click the button below 👇
+            </div>
+            <button class="btn btn-secondary" onclick="generateCompliment()">Reasons 💬</button>
+            <br><br>
+            <button class="btn" onclick="nextStage(4)">Next Stage &rarr;</button>
+        </div>
+
+        <!-- STAGE 4: Kiss Meter -->
+        <div id="stage4" class="stage">
+            <h1>Virtual kiss Sender 🤗</h1>
+            <p>Send me a kiss for good luck on my test tomorrow!</p>
+            <div id="hugCount" style="font-size: 3rem; color: var(--primary-pink); margin: 15px 0;">0</div>
+            <button class="btn" onclick="incrementHugs()">Send Kiss ⊂(・<・⊂)</button>
+            <br><br>
+            <button class="btn btn-secondary" onclick="nextStage(5)">Our Photos &rarr;</button>
+        </div>
+
+        <!-- STAGE 5: Memories With You -->
+        <div id="stage5" class="stage">
+            <h1>Moments With You 📸</h1>
+            <div class="photo-grid">
+                <div class="photo-card featured"><img src="asset/photo1.jpg" alt="Vidya"></div>
+                <div class="photo-card"><img src="asset/photo2.jpg" alt="Vidya"></div>
+                <div class="photo-card"><img src="asset/photo3.jpg" alt="Vidya"></div>
+                <div class="photo-card"><img src="asset/photo4.jpg" alt="Vidya"></div>
+                <div class="photo-card"><img src="asset/photo5.jpg" alt="Vidya"></div>
+            </div>
+            <button class="btn" onclick="startSorryStages()">Final Apology &rarr;</button>
+        </div>
+
+        <!-- STAGE 6: The Sorry Squat -->
+        <div id="stage6" class="stage">
+            <h1>Sorry Baccha 🙇‍♂️</h1>
+            <p>I am truly sorry, Baccchu.kan pakad kr uthak baithak, done 29 times for you.</p>
+            <div class="stick-figure-container">
+                <div class="stickman" id="stickmanElement">
+                    <div class="head"></div>
+                    <div class="arms"></div>
+                    <div class="body"></div>
+                    <div class="legs"></div>
+                </div>
+            </div>
+            <div class="sorry-counter">Count: <span id="squatCount">0</span> / 29</div>
+        </div>
+
+        <!-- STAGE 7: The Typewriter Sorry -->
+        <div id="stage7" class="stage">
+            <h1>29 Times Sorry ✏️</h1>
+            <p>I will not take you for granted again.</p>
+            <div class="notebook" id="notebookBox">
+                <span id="typewriterText"></span><span class="cursor">&nbsp;</span>
+            </div>
+            <button id="finishBtn" class="btn" style="display:none;" onclick="nextStage(8)">I LOVE YOU SO MUCH ❤️</button>
+        </div>
+
+        <!-- STAGE 8: Conclusion & Test Luck -->
+        <div id="stage8" class="stage">
+            <h1>SORRY Meri 5 Footiya Dora</h1>
+            <div class="highlight-box">
+                <p>Thank you for letting me explain. I love you so much, bacchu. Now, wish me luck for my test tomorrow so I can make it!</p>
+            </div>
+            <p style="font-weight: 600; color: var(--primary-pink);">Happy Girlfriend's Day! 🥰</p>
+        </div>
+
+    </div>
+
+    <script>
+        const compliments = [
+            "You have the cutest smile! 😊",
+            "You are supportive, even when I'm stressed.",
+            "Your choroge to nhi na is my favorite sound. bacchu, i love you soo much.",
+            "You understand me everytime. ✨",
+            "Even when i hurt you, you always take care of me.",
+            "You are my peace amidst the chaos. 🌸"
+        ];
+        let hugCounter = 0;
+        let squatCounter = 0;
+        let typewriterStarted = false;
+
+        function generateCompliment() {
+            const randomIndex = Math.floor(Math.random() * compliments.length);
+            document.getElementById('complimentText').innerText = compliments[randomIndex];
+            createFloatingHearts();
+        }
+
+        function incrementHugs() {
+            hugCounter++;
+            document.getElementById('hugCount').innerText = hugCounter;
+            createFloatingHearts();
+        }
+
+        function nextStage(stageNumber) {
+            document.querySelectorAll('.stage').forEach(stage => {
+                stage.classList.remove('active');
+            });
+            document.getElementById('stage' + stageNumber).classList.add('active');
+            createFloatingHearts();
+        }
+
+        function createFloatingHearts() {
+            for (let i = 0; i < 6; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-float';
+                heart.innerHTML = Math.random() > 0.5 ? '❤️' : '💋';
+                heart.style.left = Math.random() * 80 + 10 + '%';
+                heart.style.bottom = '20px';
+                heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 4000);
+            }
+        }
+
+        function startSorryStages() {
+            nextStage(6);
+            squatCounter = 0;
+            document.getElementById('squatCount').innerText = squatCounter;
+            const stickman = document.getElementById('stickmanElement');
+            stickman.classList.add('animating');
+
+            let squatInterval = setInterval(() => {
+                squatCounter++;
+                document.getElementById('squatCount').innerText = squatCounter;
+                if (squatCounter >= 29) {
+                    clearInterval(squatInterval);
+                    stickman.classList.remove('animating');
+                    setTimeout(() => {
+                        nextStage(7);
+                        startTypewriter();
+                    }, 1000);
+                }
+            }, 1000);
+        }
+
+        function startTypewriter() {
+            if (typewriterStarted) return;
+            typewriterStarted = true;
+
+            const lineText = "Sorry Bacchu I Love You\n";
+            let fullText = "";
+            let currentLine = 0;
+            const totalLines = 29;
+            const textContainer = document.getElementById('typewriterText');
+            const notebook = document.getElementById('notebookBox');
+
+            let typeInterval = setInterval(() => {
+                if (currentLine < totalLines) {
+                    fullText += lineText;
+                    textContainer.innerText = fullText;
+                    notebook.scrollTop = notebook.scrollHeight;
+                    currentLine++;
+                } else {
+                    clearInterval(typeInterval);
+                    document.getElementById('finishBtn').style.display = 'inline-block';
+                }
+            }, 150);
+        }
+    </script>
+</body>
+</html>
